@@ -1,4 +1,6 @@
 import React, { useState, useEffect}  from "react";
+import { Container, Col, Row } from "../components/Grid";
+import { Input, TextArea } from "../components/Form";
 
 import Navbar from "../components/Navbar";
 
@@ -12,7 +14,14 @@ function SearchPage() {
         setFormObject({...formObject, [name]: value})
     };
 
-
+    return (
+        <Container fluid>
+            <Row>
+                <h4>Book search</h4>
+                <Input></Input>
+            </Row>
+        </Container>
+    )
 
 
 };
