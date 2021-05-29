@@ -7,6 +7,11 @@ function SearchPage() {
     const [SearchPage, setSearchPage] = useState([])
     const [formObject, setFormObject] = useState({})
 
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+        setFormObject({...formObject, [name]: value})
+    };
+
 
 };
 
