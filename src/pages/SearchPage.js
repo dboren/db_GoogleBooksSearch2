@@ -1,6 +1,6 @@
 import React, { useState, useEffect}  from "react";
 import { Container, Col, Row } from "../components/Grid";
-import { Input, TextArea } from "../components/Form";
+import { Input, TextArea, FormBtn } from "../components/Form";
 
 import Navbar from "../components/Navbar";
 
@@ -14,6 +14,10 @@ function SearchPage() {
         setFormObject({...formObject, [name]: value})
     };
 
+    function searchGoogleBooks(event) {
+
+    }
+
     return (
         <Container fluid>
             <Row>
@@ -23,6 +27,12 @@ function SearchPage() {
                     name="title"
                     placeholder="Title"
                     value={formObject.title}></Input>
+                <FormBtn
+                    disabled={!formObject.title}
+                    onClick={searchGoogleBooks}
+                    >
+                    Search
+                </FormBtn>
             </Row>
         </Container>
     )
