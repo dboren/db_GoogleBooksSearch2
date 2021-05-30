@@ -1,4 +1,5 @@
 import axios from "axios";
+const API_KEY = process.env.API_KEY;
 
 export default {
     getBooks: function() {
@@ -12,5 +13,8 @@ export default {
     },
     saveBook: function(bookData) {
         return axios.post("/api/books", bookData);
+    },
+    findBook: function() {
+        return axios.get(`https://www.googleapis.com/books/v1/volumes?q=search-terms&key=${API_KEY}`)
     }
 };
