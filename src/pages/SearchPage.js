@@ -15,16 +15,17 @@ function SearchPage() {
         setFormObject({...formObject, [name]: value})
     };
 
+    //need to refactor
     function searchGoogleBooks(event) {
-        const API_KEY = process.env.API_KEY;
-
-        // fetch(`https://www.googleapis.com/books/v1/volumes?q=search-terms&key=${API_KEY}`)
-        //     .then(response => response.json())
-        //     .then(result => {
-        //     this.setState({ books: result.items})
-        //     })
-        // };
-
+        event.preventDefault();
+        API.findBook(formObject.title)
+            .then(res => {
+                if (res.data.status === "error") {
+                    throw new Error(res.data.message);
+                }
+                this.setState({ results: res.data.message, error: "" });
+            })
+            .catch(err => this.setState({ error: err.message }));
     };
 
     return (
