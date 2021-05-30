@@ -18,7 +18,11 @@ function SearchPage() {
         <Container fluid>
             <Row>
                 <h4>Book search</h4>
-                <Input></Input>
+                <Input
+                    onChange={handleInputChange}
+                    name="title"
+                    placeholder="Title"
+                    value={formObject.title}></Input>
             </Row>
         </Container>
     )

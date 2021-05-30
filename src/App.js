@@ -16,6 +16,11 @@ function App() {
           <h1>(React) Google Books Search</h1>
           <h3>Search for a book you're interested in and save it to your reading list!</h3>
         </Jumbotron>
+        <Switch>
+          <Route exact path={["/", "/SearchPage"]}>
+            <SearchPage></SearchPage>
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
